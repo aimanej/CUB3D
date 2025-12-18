@@ -6,15 +6,15 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 22:12:13 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 17:11:21 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 20:21:01 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/get_next_line.h"
 
-size_t	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str && str[i])
@@ -42,10 +42,10 @@ char	*ft_strdup(char *str)
 	return (res);
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr(char *s, unsigned int start, int len)
 {
 	char	*p;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!s)

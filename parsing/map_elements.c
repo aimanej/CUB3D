@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_elements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:02:17 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/17 20:33:26 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub.h"
+#include "../includes/cub3d.h"
 
 static int	check_elem(t_map *map, int i, int j)
 {

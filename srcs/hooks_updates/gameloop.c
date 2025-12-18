@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gameloop.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/18 20:18:34 by aijadid           #+#    #+#             */
+/*   Updated: 2025/12/18 20:18:35 by aijadid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3d.h"
 
 int	gameloop(void *data)
@@ -11,7 +23,7 @@ int	gameloop(void *data)
 		player_update(&(mlx->map));
 		render_func(mlx);
 	}
-	return 0;
+	return (0);
 }
 
 void	render_func(t_mlx *mlx)
@@ -19,7 +31,7 @@ void	render_func(t_mlx *mlx)
 	if (mlx->map.img.img_ptr)
 		ft_free_select(mlx->map.img.img_ptr);
 	mlx->map.img.img_ptr = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
-	if(!mlx->map.img.img_ptr)
+	if (!mlx->map.img.img_ptr)
 		ft_free_all();
 	ft_add_last_ptr(dump_ptr(), ft_new_ptr(mlx->map.img.img_ptr, 1));
 	mlx->map.img.addr = mlx_get_data_addr(mlx->map.img.img_ptr,

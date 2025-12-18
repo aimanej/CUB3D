@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hooks.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/18 20:18:37 by aijadid           #+#    #+#             */
+/*   Updated: 2025/12/18 20:18:38 by aijadid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3d.h"
 
 void	mlx_hook_loops(t_mlx *mlx)
@@ -14,7 +26,7 @@ int	destroy_notify(int keysim, void *data)
 	(void)keysim;
 	(void)data;
 	ft_free_all();
-	return 0;
+	return (0);
 }
 
 int	press_hook(int keysim, void *data)

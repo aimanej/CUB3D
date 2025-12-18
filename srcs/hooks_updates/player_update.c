@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   player_update.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/18 20:18:40 by aijadid           #+#    #+#             */
+/*   Updated: 2025/12/18 20:18:41 by aijadid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3d.h"
 
 void	straight_walk(t_map *map)
@@ -13,7 +25,9 @@ void	straight_walk(t_map *map)
 	next_cy = map->player.center_pos.row + sin(map->player.view_angle) * step;
 	nextx = next_cx / TILE_SIZE;
 	nexty = next_cy / TILE_SIZE;
-	if (nexty <= 0 || nexty >= map->size || nextx <= 0 || nextx >= (ft_strlen(map->map[nexty]) - 1) ||  map->map[nexty][nextx] == '1')
+	if (nexty <= 0 || nexty >= map->size || nextx <= 0
+		|| nextx >= (ft_strlen(map->map[nexty]) - 1)
+		|| map->map[nexty][nextx] == '1')
 		return ;
 	else
 	{

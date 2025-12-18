@@ -8,7 +8,7 @@ Flags = -lmlx -lXext -lX11 -lm -std=c99
 
 Mlx_Path = -L /home/aijadid/Desktop/minilibx-linux/
 
-Headers = includes/get_next_line.h includes/cub3d.h includes/cub.h
+Headers = includes/get_next_line.h includes/cub3d.h
 
 Name = cub3D
 

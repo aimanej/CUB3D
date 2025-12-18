@@ -6,11 +6,11 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:16:50 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/04 18:41:38 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub.h"
+#include "../includes/cub3d.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
