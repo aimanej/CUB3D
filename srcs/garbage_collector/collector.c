@@ -25,6 +25,8 @@ void	ft_free_select(void *ptr)
 	dump->next = tmp->next;
 	if (tmp->img_t)
 		mlx_destroy_image(mlx->mlx, tmp->ptr);
+	else
+		free(tmp->ptr);
 	free(tmp);
 }
 

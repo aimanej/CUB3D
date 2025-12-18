@@ -52,5 +52,6 @@ int	textured(t_map *map);
 int	f_c_count(char c);
 int	floor_ceiling(char *line, char c, t_map *map);
 void	free_2d(char **tmp);
+char	*ft_substr1(char *s, unsigned int start, size_t len);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 22:12:13 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/15 23:50:40 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:11:21 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,35 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	p = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!p)
+		return (NULL);
+	while (s1[i])
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		p[i] = s2[j];
+		i++;
+		j++;
+	}
+	return (p[i] = '\0', p);
+}
+
+char	*ft_strjoin1(char *s1, char *s2)
+{
+	char	*p;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if (!s1)
+		s1 = "";
+	if (!s1 || !s2)
+		return (NULL);
+	p = ft_malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!p)
 		return (NULL);
 	while (s1[i])

@@ -68,7 +68,7 @@ void	allocate_map(t_map *map, char *filename)
 			map->map[i] = ft_strdup1(line);
 			i++;
 		}
-		free(line);
+		ft_free_select(line);
 		line = get_next_line(fd);
 	}
 	close(fd);

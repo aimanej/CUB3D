@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:56 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 15:34:08 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 17:09:53 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,29 @@ char	*ft_strdup1(char *str)
 	}
 	res[i] = 0;
 	return (res);
+}
+
+char	*ft_substr1(char *s, unsigned int start, size_t len)
+{
+	char	*p;
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup1(""));
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	p = ft_malloc(len + 1);
+	if (!p)
+		return (NULL);
+	while (i < len)
+	{
+		p[i] = s[start];
+		i++;
+		start++;
+	}
+	p[i] = '\0';
+	return (p);
 }

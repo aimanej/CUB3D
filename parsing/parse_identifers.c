@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_identifers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:23:22 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 14:47:58 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:23:01 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,18 @@ void	parse_line(char *line, t_map *map, char *str)
 	if (is_identifier(str))
 	{
 		if (!parse_identif(str, map))
-		{
-			free(line);
 			error("too many identifiers");
-		}
 	}
 	else if (is_map(str) && !textured(map))
 		map->size++;
 	else if ((*str == 'F') || (*str == 'C'))
 	{
 		if (floor_ceiling(str, *str, map))
-		{
-			free(line);
 			error("invalid F or C identifiers");
-		}
 	}
 	else if (is_whitespaces(line))
 	{
-		free(line);
+		printf("%s\n", line);
 		error("invalid file content");
 	}
 }
@@ -83,7 +77,7 @@ void	parse_loop(char *line, int fd, t_map *map, char *str)
 	while (line)
 	{
 		parse_line(line, map, str);
-		free(line);
+		ft_free_select(line);
 		line = get_next_line(fd);
 	}
 }
