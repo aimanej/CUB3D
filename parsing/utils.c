@@ -6,7 +6,7 @@
 /*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:56 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/16 21:17:20 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:57:31 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_strdup1(char *str)
 	char	*res;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	res = ft_malloc(ft_strlen(str) + 1);
 	if (!res)
 		return (NULL);
@@ -67,21 +69,3 @@ char	*ft_strdup1(char *str)
 	res[i] = 0;
 	return (res);
 }
-// void    initialize(t_map *map)
-// {
-//     data->EA_path =NULL;
-//     data->NO_path =NULL;
-//     data->SO_path= NULL;
-//     data->WE_path= NULL;
-//     data->count = 0;
-//     data->player_dir  = 0;
-// }
-
-// int main(int ac, char **av)
-// {
-//     if(ac != 2)
-//         error("invalid args");
-//     t_data data;
-//     initialize(&data);
-//     parsing(av, &data);
-// }

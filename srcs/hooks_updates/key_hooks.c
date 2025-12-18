@@ -2,10 +2,10 @@
 
 void	mlx_hook_loops(t_mlx *mlx)
 {
-	mlx_hook(mlx->win, 2, (1L << 0), (int(*)())press_hook, mlx);
-	mlx_hook(mlx->win, 3, (1L << 1), (int(*)())release_hook, mlx);
-	mlx_hook(mlx->win, 17, 0, (int(*)())destroy_notify, NULL);
-	mlx_loop_hook(mlx->mlx, (int(*)())gameloop, mlx);
+	mlx_hook(mlx->win, 2, (1L << 0), press_hook, mlx);
+	mlx_hook(mlx->win, 3, (1L << 1), release_hook, mlx);
+	mlx_hook(mlx->win, 17, 0, destroy_notify, NULL);
+	mlx_loop_hook(mlx->mlx, gameloop, mlx);
 	mlx_loop(mlx->mlx);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:23:22 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/17 20:42:39 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:47:58 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	parse_line(char *line, t_map *map, char *str)
 		map->size++;
 	else if ((*str == 'F') || (*str == 'C'))
 	{
-		if (!f_c_count(*str) && floor_ceiling(str, *str, map))
+		if (floor_ceiling(str, *str, map))
 		{
 			free(line);
 			error("invalid F or C identifiers");
@@ -93,9 +93,6 @@ int	check_map_file(char *filename, t_map *map)
 	int		fd;
 	char	*line;
 	char	*str;
-
-	line = NULL;
-	str = NULL;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)

@@ -4,8 +4,11 @@ int main(int ac, char **av)
 {
 	t_mlx mlx;
 
-	if (ac < 2)
-		return 0;
+	if (ac != 2)
+	{
+		printf("ERROR/invalid num of args\n");
+		return 1;
+	}
 	mlx.mlx = mlx_init();
 	if (!mlx.mlx)
 	{

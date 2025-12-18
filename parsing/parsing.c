@@ -6,7 +6,7 @@
 /*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:29 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/17 20:35:40 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:08:13 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_filename(char *filename)
 		return (1);
 	i = ft_strlen(filename);
 	if (i <= 4 || filename[i - 1] != 'b' || filename[i - 2] != 'u' || filename[i
-			- 3] != 'c' || filename[i - 4] != '.')
+			- 3] != 'c' || filename[i - 4] != '.' || filename[i - 5] == '/')
 		return (1);
 	return (0);
 }
@@ -47,6 +47,19 @@ char	*get_path(char *str)
 	return (NULL);
 }
 
+static char	**ft_free(char **r, int in)
+{
+	int	t;
+
+	t = 0;
+	while (r[t])
+	{
+		free(r[t]);
+		t++;
+	}
+	free(r);
+	return (NULL);
+}
 
 void	parsing(char **av, t_map *map)
 {
@@ -54,6 +67,8 @@ void	parsing(char **av, t_map *map)
 		error("invalid filename");
 	if (check_map_file(av[1], map))
 		error("invalid path or componant");
+	if (map->ceil_color == -1 || map->ceil_color == -1)
+		error("F or C identifier needed");
 	allocate_map(map, av[1]);
 	parse_map(map);
 }
