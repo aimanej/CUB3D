@@ -4,7 +4,7 @@ SRCS_CST = srcs/initializers/texture_init.c srcs/ray_casting/textures.c srcs/hoo
 
 
 
-Flags = -lmlx -lXext -lX11 -lm 
+Flags = -lmlx -lXext -lX11 -lm
 
 Mlx_Path = -L /home/aijadid/Desktop/minilibx-linux/
 
