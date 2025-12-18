@@ -6,7 +6,7 @@
 /*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:49:44 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/17 20:33:01 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:57:01 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	floor_ceiling(char *line, char c, t_map *map)
 {
 	char	**tmp;
 
+	if (f_c_count(*line))
+		return (1);
 	line++;
 	line = skip_spaces(line);
 	tmp = ft_split(line, ',');

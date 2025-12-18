@@ -12,7 +12,7 @@
 
 #include "../../includes/get_next_line.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
@@ -50,7 +50,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > (ft_strlen(s) - start))
 		len = ft_strlen(s) - start;

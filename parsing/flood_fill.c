@@ -6,7 +6,7 @@
 /*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:26:28 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/17 20:38:31 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:30:53 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int	textured(t_map *map)
 	}
 	if (map->ceil_color)
 		return (0);
-	return 1;
 }
 
 int	f_c_count(char c)

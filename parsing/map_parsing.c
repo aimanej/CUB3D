@@ -32,8 +32,10 @@ int	is_walls(char *line)
 int	is_surrounded_by_walls(t_map *map)
 {
 	int	i;
+	int	j;
 
 	i = 1;
+	j = 0;
 	if (!is_walls(map->map[0]) || !is_walls(map->map[map->size - 1]))
 		return (1);
 	while (map->map[i])

@@ -39,4 +39,10 @@ void	map_init(t_mlx *mlx)
 	mlx->map.player.move_speed = 2;
 	mlx->map.player.rotation_speed = 2 * (PI / 180);
 	mlx->map.player.fov = 60 * (PI / 180);
+	mlx->map.ceil_color = -1;
+	mlx->map.fl_color = -1;
+	mlx->map.textures[NO].path = NULL;
+	mlx->map.textures[SO].path = NULL;
+	mlx->map.textures[WE].path = NULL;
+	mlx->map.textures[EA].path = NULL;
 }

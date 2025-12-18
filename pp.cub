@@ -1,8 +1,7 @@
-NO ./home/aijadid/Desktop/CUB3D/textures/152.xpm
-SO ./home/aijadid/Desktop/CUB3D/textures/149.xpm
-WE ./home/aijadid/Desktop/CUB3D/textures/153.xpm
-EA ./home/aijadid/Desktop/CUB3D/textures/176.xpm
-
+NO ./home/ayboudya/Desktop/lst_cube/textures/149.xpm
+SO ./home/ayboudya/Desktop/lst_cube/textures/149.xpm
+WE ./home/ayboudya/Desktop/lst_cube/textures/153.xpm
+EA ./home/ayboudya/Desktop/lst_cube/textures/176.xpm
 
 F 20,20,20
 
@@ -10,7 +9,6 @@ C 0,0,20
 
 
  111111111111111111111
-                     1
 1111111111111111111111
 1000000000000000000001
 1000000E10000000000001

@@ -65,7 +65,7 @@ static int	fill(const char *s, int i, char *r, char c)
 	return (i);
 }
 
-static char	**ft_free(char **r)
+static char	**ft_free(char **r, int in)
 {
 	int	t;
 
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		{
 			r[in] = malloc(lent(s, i, c) + 1);
 			if (!r[in])
-				return (ft_free(r));
+				return (ft_free(r, in));
 			i = fill(s, i, r[in], c);
 			in++;
 		}
