@@ -1,12 +1,12 @@
-Srcs = srcs/ray_casting/wall_height.c srcs/ray_casting/ray_angle_direction.c srcs/garbage_collector/collector_helpers.c srcs/garbage_collector/collector.c main.c srcs/ray_casting/ray_cast.c  srcs/pixel_drawing.c srcs/hooks_updates/key_hooks.c srcs/hooks_updates/player_update.c 
+Srcs = srcs/initializers/texture_init.c srcs/ray_casting/wall_height.c srcs/ray_casting/ray_angle_direction.c srcs/garbage_collector/collector_helpers.c srcs/garbage_collector/collector.c main.c srcs/ray_casting/ray_cast.c  srcs/pixel_drawing.c srcs/hooks_updates/key_hooks.c srcs/hooks_updates/player_update.c 
 NEWSRC = parsing/utils.c parsing/gnl/get_next_line_utils.c parsing/floor_ceiling.c parsing/parse_identifers.c parsing/gnl/get_next_line.c parsing/flood_fill.c parsing/ft_strncmp.c parsing/map_elements.c parsing/parsing.c parsing/ft_isdigit.c parsing/ft_split.c parsing/ft_atoi.c parsing/map_parsing.c
-SRCS_CST = srcs/initializers/texture_init.c srcs/ray_casting/textures.c srcs/hooks_updates/angle_norm.c srcs/hooks_updates/gameloop.c srcs/initializers/ray_init.c srcs/ray_casting/horizontal_distance.c srcs/ray_casting/vertical_distance.c
+SRCS_CST =  srcs/ray_casting/textures.c srcs/hooks_updates/angle_norm.c srcs/hooks_updates/gameloop.c srcs/initializers/ray_init.c srcs/ray_casting/horizontal_distance.c srcs/ray_casting/vertical_distance.c
 
 
 
-Flags = -lmlx -lXext -lX11 -lm
+Flags = -lmlx -lXext -lX11 -lm -std=c99
 
-Mlx_Path = -L /home/ayboudya/Downloads/minilibx-linux/
+Mlx_Path = -L /home/aijadid/Desktop/minilibx-linux/
 
 Headers = includes/get_next_line.h includes/cub3d.h includes/cub.h
 

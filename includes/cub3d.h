@@ -7,7 +7,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "/home/ayboudya/Downloads/minilibx-linux/mlx.h"
+#include "/home/aijadid/Desktop/minilibx-linux/mlx.h"
 #include <strings.h>
  
 #define PI 3.14159265358979323846

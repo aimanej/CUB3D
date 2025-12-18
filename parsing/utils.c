@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:56 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 14:57:31 by ayboudya         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:34:08 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	error(char *message)
 {
 	printf("error/ %s\n", message);
-	exit(1);
+	ft_free_all();
 }
 
 char	*skip_spaces(char *str)

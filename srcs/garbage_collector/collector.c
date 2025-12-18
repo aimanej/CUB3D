@@ -60,7 +60,7 @@ void	ft_free_all(void)
 	disp_win_destroy(mlx);
 	free((*dump_re));
 	*dump_re = NULL;
-	exit(0);
+	exit(1);
 }
 
 void	*ft_malloc(size_t size)
