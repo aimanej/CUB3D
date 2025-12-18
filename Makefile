@@ -4,9 +4,9 @@ SRCS_CST = srcs/initializers/texture_init.c srcs/ray_casting/textures.c srcs/hoo
 
 
 
-Flags = -lmlx -lXext -lX11 -lm -Wall -Wextra -Werror
+Flags = -lmlx -lXext -lX11 -lm 
 
-Mlx_Path = -L /home/aimane-jadid/Desktop/studies/minilibx-linux/
+Mlx_Path = -L /home/aijadid/Desktop/minilibx-linux/
 
 Headers = includes/get_next_line.h includes/cub3d.h includes/cub.h
 
