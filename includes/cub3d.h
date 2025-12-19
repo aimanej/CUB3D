@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:17:26 by aijadid           #+#    #+#             */
-/*   Updated: 2025/12/18 20:17:27 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 01:02:40 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,6 @@ int						destroy_notify(int keysim, void *data);
 void					mlx_hook_loops(t_mlx *mlx);
 
 // /garbage collector
-char					*ft_strdup1(char *str);
 void					*ft_malloc(size_t size);
 void					ft_free_all(void);
 
@@ -206,6 +205,8 @@ int						ft_isdigit(int c);
 char					**ft_split(char const *s, char c);
 int						ft_atoi(const char *str);
 void					player_angle_set(t_map *map, char c);
+int						skipper(char *str);
+
 // parsing
 void					error(char *message);
 int						parse_spaces(t_map *map, int i, int j);
@@ -223,6 +224,5 @@ int						textured(t_map *map);
 int						f_c_count(char c);
 int						floor_ceiling(char *line, char c, t_map *map);
 void					free_2d(char **tmp);
-char					*ft_substr1(char *s, unsigned int start, size_t len);
 
 #endif

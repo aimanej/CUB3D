@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:26:28 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 21:22:29 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,9 @@ int	textured(t_map *map)
 			return (1);
 		t++;
 	}
-	if (map->ceil_color)
-		return (0);
+	if (map->ceil_color == -1 || map->fl_color == -1)
+		return (1);
+	return (0);
 }
 
 int	f_c_count(char c)

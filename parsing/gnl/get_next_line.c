@@ -6,11 +6,31 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 21:07:11 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 17:27:10 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 21:16:32 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/get_next_line.h"
+
+char	*ft_strdup(char *str)
+{
+	int		i;
+	char	*res;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	res = ft_malloc(ft_strlen(str) + 1);
+	if (!res)
+		return (NULL);
+	while (str[i])
+	{
+		res[i] = str[i];
+		i++;
+	}
+	res[i] = 0;
+	return (res);
+}
 
 char	*read_f(int fd, char *holder)
 {
@@ -49,7 +69,7 @@ char	*get_line(char *holder)
 		return (NULL);
 	while (holder[i] != '\n' && holder[i])
 		i++;
-	return (ft_substr1(holder, 0, i));
+	return (ft_substr(holder, 0, i));
 }
 
 char	*get_remain(char *holder)
@@ -68,7 +88,7 @@ char	*get_remain(char *holder)
 		holder = NULL;
 		return (NULL);
 	}
-	tmp = ft_substr1(holder, (i + 1), ft_strlen(holder) - i - 1);
+	tmp = ft_substr(holder, (i + 1), ft_strlen(holder) - i - 1);
 	ft_free_select(holder);
 	return (tmp);
 }

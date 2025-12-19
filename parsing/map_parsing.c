@@ -49,25 +49,35 @@ int	is_surrounded_by_walls(t_map *map)
 	return (0);
 }
 
+void	allocation(t_map *map, char *line, int *i, int *flag)
+{
+	if (is_map(line))
+	{
+		map->map[*i] = ft_strdup(line);
+		(*i)++;
+		(*flag)++;
+	}
+	if (!*line && *flag && *flag < map->size)
+		error("bad map\n");
+}
+
 void	allocate_map(t_map *map, char *filename)
 {
 	char	*line;
 	int		fd;
 	int		i;
+	int		flag;
 
 	i = 0;
+	flag = 0;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		error("OPEN");
+		error("Closing Window !OPEN");
 	map->map = ft_malloc((map->size + 1) * sizeof(char *));
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (is_map(line))
-		{
-			map->map[i] = ft_strdup1(line);
-			i++;
-		}
+		allocation(map, line, &i, &flag);
 		ft_free_select(line);
 		line = get_next_line(fd);
 	}
@@ -92,9 +102,9 @@ void	player_angle_set(t_map *map, char c)
 void	parse_map(t_map *map)
 {
 	if (map_elements(map))
-		error("invalid map elements");
+		error("Closing Window !invalid map elements");
 	if (valid_spaces(map))
-		error("invalid spaces");
+		error("Closing Window !invalid spaces");
 	if (is_surrounded_by_walls(map))
-		error("not surrounded by wall");
+		error("Closing Window !not surrounded by wall");
 }

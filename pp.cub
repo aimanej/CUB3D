@@ -1,15 +1,14 @@
-
-NO ./home/aijadid/Desktop/CUB3D/textures/149.xpm
-SO ./home/aijadid/Desktop/CUB3D/textures/149.xpm
-WE ./home/aijadid/Desktop/CUB3D/textures/153.xpm
-EA ./home/aijadid/Desktop/CUB3D/textures/176.xpm
-
+NO ./textures/149.xpm
+SO ./textures/149.xpm
+WE ./textures/153.xpm
+EA ./textures/176.xpm
 
 C 0,0,20
-F 0,0,0
+
+F 20,20,0
 
 
-111111111111111111111
+ 111111111111111111111
 1111111111111111111111
 1000000000000000000001
 1000000E10000000000001

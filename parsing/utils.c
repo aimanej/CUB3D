@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:56 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 23:21:41 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	error(char *message)
 
 char	*skip_spaces(char *str)
 {
-	while (str)
+	while (str && *str)
 	{
 		if (!((*str >= 9 && *str <= 13) || *str == 32))
 			break ;
@@ -48,49 +48,4 @@ int	is_whitespaces(char *str)
 		i++;
 	}
 	return (0);
-}
-
-char	*ft_strdup1(char *str)
-{
-	int		i;
-	char	*res;
-
-	i = 0;
-	if (!str)
-		return (NULL);
-	res = ft_malloc(ft_strlen(str) + 1);
-	if (!res)
-		return (NULL);
-	while (str[i])
-	{
-		res[i] = str[i];
-		i++;
-	}
-	res[i] = 0;
-	return (res);
-}
-
-char	*ft_substr1(char *s, unsigned int start, size_t len)
-{
-	char	*p;
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup1(""));
-	if (len > (ft_strlen(s) - start))
-		len = ft_strlen(s) - start;
-	p = ft_malloc(len + 1);
-	if (!p)
-		return (NULL);
-	while (i < len)
-	{
-		p[i] = s[start];
-		i++;
-		start++;
-	}
-	p[i] = '\0';
-	return (p);
 }

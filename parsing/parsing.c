@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:29 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 01:02:22 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,33 @@ int	check_filename(char *filename)
 	return (0);
 }
 
+int	skipper(char *str)
+{
+	int	t;
+
+	t = 0;
+	while (str[t] && str[t] != ' ')
+		t++;
+	return (t);
+}
+
+// char *skipper(char *str)
+// {
+// 	while(str && *str != ' ')
+// 		str++;
+// 	return (str);
+// }
+
 char	*get_path(char *str)
 {
 	char	*path;
 
-	path = ft_strchr(str, '.');
+	path = NULL;
+	str += 2;
+	path = skip_spaces(str);
 	if (!path)
 		return (NULL);
-	if (path[0] == '/')
-		return (path);
-	return (NULL);
+	return (path);
 }
 
 static char	**ft_free(char **r, int in)
@@ -64,11 +81,11 @@ static char	**ft_free(char **r, int in)
 void	parsing(char **av, t_map *map)
 {
 	if (check_filename(av[1]))
-		error("invalid filename");
+		error("Closing Window !invalid filename");
 	if (check_map_file(av[1], map))
-		error("invalid path or componant");
+		error("Closing Window !invalid path or componant");
 	if (map->ceil_color == -1 || map->ceil_color == -1)
-		error("F or C identifier needed");
+		error("Closing Window !F or C identifier needed");
 	allocate_map(map, av[1]);
 	parse_map(map);
 }

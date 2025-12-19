@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:23:22 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 01:01:13 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,39 @@ int	is_identifier(char *str)
 	return (0);
 }
 
+char	*filler(char *str)
+{
+	char	*s1;
+
+	s1 = ft_substr(get_path(str), 0, skipper(get_path(str)));
+	return (s1);
+}
+
 int	parse_identif(char *str, t_map *map)
 {
 	if (!ft_strncmp(str, "NO ", 3))
 	{
 		if (map->textures[NO].path)
 			return (0);
-		map->textures[NO].path = ft_strdup1(get_path(str));
+		map->textures[NO].path = filler(str);
 	}
 	else if (!ft_strncmp(str, "SO ", 3))
 	{
 		if (map->textures[SO].path)
 			return (0);
-		map->textures[SO].path = ft_strdup1(get_path(str));
+		map->textures[SO].path = filler(str);
 	}
 	else if (!ft_strncmp(str, "WE ", 3))
 	{
 		if (map->textures[WE].path)
 			return (0);
-		map->textures[WE].path = ft_strdup1(get_path(str));
+		map->textures[WE].path = filler(str);
 	}
 	else if (!ft_strncmp(str, "EA ", 3))
 	{
 		if (map->textures[EA].path)
 			return (0);
-		map->textures[EA].path = ft_strdup1(get_path(str));
+		map->textures[EA].path = filler(str);
 	}
 	return (1);
 }
@@ -55,19 +63,18 @@ void	parse_line(char *line, t_map *map, char *str)
 	if (is_identifier(str))
 	{
 		if (!parse_identif(str, map))
-			error("too many identifiers");
+			error("Closing Window !too many identifiers");
 	}
 	else if (is_map(str) && !textured(map))
 		map->size++;
 	else if ((*str == 'F') || (*str == 'C'))
 	{
 		if (floor_ceiling(str, *str, map))
-			error("invalid F or C identifiers");
+			error("Closing Window !invalid F or C identifiers");
 	}
 	else if (is_whitespaces(line))
 	{
-		printf("%s\n", line);
-		error("invalid file content");
+		error("Closing Window !invalid file content");
 	}
 }
 
@@ -90,7 +97,7 @@ int	check_map_file(char *filename, t_map *map)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		error("OPEN FAILED");
+		error("Closing Window !OPEN FAILED");
 	parse_loop(line, fd, map, str);
 	close(fd);
 	if (!map->textures[EA].path || !map->textures[SO].path

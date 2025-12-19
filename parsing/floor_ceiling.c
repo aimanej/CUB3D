@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:49:44 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/18 23:29:22 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,19 @@ static int	is_valid_num(char *tmp)
 	int	i;
 
 	i = 0;
+	tmp = skip_spaces(tmp);
+	if (tmp[i] == '+')
+		i++;
 	while (tmp[i])
 	{
-		if (!ft_isdigit(tmp[i]))
-			return (0);
+		if (tmp[i] && !ft_isdigit(tmp[i]))
+		{
+			tmp = skip_spaces(&tmp[i]);
+			if (*tmp != '\0')
+				return (0);
+		}
 		i++;
 	}
-	if (i > 3)
-		return (0);
 	return (1);
 }
 
@@ -53,7 +58,9 @@ static int	apply_color(char **tmp, char c, t_map *map)
 	r = ft_atoi(tmp[0]);
 	g = ft_atoi(tmp[1]);
 	b = ft_atoi(tmp[2]);
-	if (r > 250 || g > 250 || b > 250)
+	if (r > 255 || g > 255 || b > 255)
+		return (1);
+	if (r < 0 || g < 0 || b < 0)
 		return (1);
 	if (c == 'F')
 		map->fl_color = chimicolor(r, g, b);
