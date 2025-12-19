@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floor_ceiling.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:49:44 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/19 11:53:55 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:23:07 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,23 @@ static int	apply_color(char **tmp, char c, t_map *map)
 	return (0);
 }
 
+void	check_comma(char *line, t_map *map)
+{
+	int	i;
+	int	count;
+
+	count = 0;
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == ',')
+			count++;
+		i++;
+	}
+	if (count != 2)
+		error(map, "too many commas");
+}
+
 int	floor_ceiling(char *line, char c, t_map *map)
 {
 	char	**tmp;
@@ -79,6 +96,7 @@ int	floor_ceiling(char *line, char c, t_map *map)
 		return (1);
 	line++;
 	line = skip_spaces(line);
+	check_comma(line, map);
 	tmp = ft_split(line, ',');
 	if (!tmp)
 		return (1);

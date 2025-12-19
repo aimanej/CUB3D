@@ -57,7 +57,7 @@ void	allocation(t_map *map, char *line, int *i, int *flag)
 		(*i)++;
 		(*flag)++;
 	}
-	if (!is_map(line) && *flag && *flag < map->size)
+	if (!*line && *flag && *flag < map->size)
 		error(map, "bad map\n");
 }
 

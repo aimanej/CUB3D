@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:17:26 by aijadid           #+#    #+#             */
-/*   Updated: 2025/12/19 11:33:41 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:11:08 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define WIDTH 1080
 # define HEIGHT 760
 
-# include "/home/aijadid/Desktop/minilibx-linux/mlx.h"
+# include "/home/ayboudya/Downloads/minilibx-linux/mlx.h"
 # include "cub3d.h"
 # include "get_next_line.h"
 # include <fcntl.h>

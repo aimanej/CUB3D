@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixel_drawing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ayboudya <ayboudya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:19:06 by aijadid           #+#    #+#             */
-/*   Updated: 2025/12/18 20:19:07 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 12:12:31 by ayboudya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	paint_floor(t_map *map, t_ray *ray, int cur_col)
 {
 	while (ray->row_end < HEIGHT)
 	{
-		if (cur_col > WIDTH - 1 || ray->row_end > HEIGHT - 1 || cur_col < 0
+		if (cur_col > WIDTH - 1 || ray->row_end >= HEIGHT - 1 || cur_col < 0
 			|| ray->row_end < 0)
 			break ;
 		draw_to_img(&(map->img), ray->row_end, cur_col, map->fl_color);

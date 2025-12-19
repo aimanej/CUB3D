@@ -6,7 +6,7 @@ SRCS_CST =  srcs/ray_casting/textures.c srcs/hooks_updates/angle_norm.c srcs/hoo
 
 Flags = -lmlx -lXext -lX11 -lm
 
-Mlx_Path = -L /home/aijadid/Desktop/minilibx-linux/
+Mlx_Path = -L /home/ayboudya/Downloads/minilibx-linux/
 
 Headers = includes/get_next_line.h includes/cub3d.h
 
