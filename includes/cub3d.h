@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:17:26 by aijadid           #+#    #+#             */
-/*   Updated: 2025/12/19 01:02:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:33:41 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ typedef struct s_map
 	t_ray				**ray_arr;
 	int					fl_color;
 	int					ceil_color;
+	int					fd;
 }						t_map;
 
 typedef struct s_mlx
@@ -140,8 +141,6 @@ void					ft_add_last_ptr(t_garbage **dump, t_garbage *new);
 t_garbage				**dump_ptr(void);
 t_garbage				*ft_new_ptr(void *ptr, int type);
 void					ft_free_select(void *ptr);
-
-// key hooks
 int						press_hook(int keysim, void *data);
 int						release_hook(int keysim, void *data);
 void					player_update(t_map *map);
@@ -158,8 +157,6 @@ void					texture_init(t_mlx *mlx);
 void					player_direction(t_player *py);
 void					ft_bzero(void *s, size_t n);
 void					*ft_memset(void *s, int c, size_t n);
-
-// new
 void					set_ray_angles(t_map *map);
 void					ray_direction(t_ray *ray);
 void					ray_cast(t_map *map);
@@ -173,32 +170,20 @@ int						gameloop(void *data);
 void					set_compass(t_map *map, t_ray *ray);
 int						destroy_notify(int keysim, void *data);
 void					mlx_hook_loops(t_mlx *mlx);
-
-// /garbage collector
 void					*ft_malloc(size_t size);
 void					ft_free_all(void);
-
-// horizontal calculations :
 void					first_hor_inter(t_map *map, t_ray *ray);
 void					hor_step_calc(t_ray *ray);
 void					hor_distance_calc(t_map *map, t_ray *ray);
-
-// vertical calculations :
 void					ver_step_calc(t_ray *ray);
 void					first_ver_inter(t_map *map, t_ray *ray);
 void					ver_distance_calc(t_map *map, t_ray *ray);
-
 void					paint_ceiling(t_map *map, t_ray *ray, int cur_col);
 void					paint_wall(t_map *map, t_ray *ray, int cur_col);
 void					paint_floor(t_map *map, t_ray *ray, int cur_col);
-
-// parsing
-// utils
 int						is_whitespaces(char *str);
 char					*skip_spaces(char *str);
 int						is_space(char c);
-
-// LIBFT
 int						ft_strncmp(const char *str1, const char *str2,
 							size_t n);
 int						ft_isdigit(int c);
@@ -206,9 +191,7 @@ char					**ft_split(char const *s, char c);
 int						ft_atoi(const char *str);
 void					player_angle_set(t_map *map, char c);
 int						skipper(char *str);
-
-// parsing
-void					error(char *message);
+void					error(t_map *map, char *message);
 int						parse_spaces(t_map *map, int i, int j);
 void					parse_map(t_map *map);
 char					*get_path(char *str);
@@ -224,5 +207,6 @@ int						textured(t_map *map);
 int						f_c_count(char c);
 int						floor_ceiling(char *line, char c, t_map *map);
 void					free_2d(char **tmp);
+char					*filler(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:23:22 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/19 01:01:13 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:28:35 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ int	is_identifier(char *str)
 		|| !ft_strncmp(str, "WE ", 3) || !ft_strncmp(str, "EA ", 3))
 		return (1);
 	return (0);
-}
-
-char	*filler(char *str)
-{
-	char	*s1;
-
-	s1 = ft_substr(get_path(str), 0, skipper(get_path(str)));
-	return (s1);
 }
 
 int	parse_identif(char *str, t_map *map)
@@ -63,18 +55,18 @@ void	parse_line(char *line, t_map *map, char *str)
 	if (is_identifier(str))
 	{
 		if (!parse_identif(str, map))
-			error("Closing Window !too many identifiers");
+			error(map, "Closing Window !too many identifiers");
 	}
 	else if (is_map(str) && !textured(map))
 		map->size++;
 	else if ((*str == 'F') || (*str == 'C'))
 	{
 		if (floor_ceiling(str, *str, map))
-			error("Closing Window !invalid F or C identifiers");
+			error(map, "Closing Window !invalid F or C identifiers");
 	}
 	else if (is_whitespaces(line))
 	{
-		error("Closing Window !invalid file content");
+		error(map, "Closing Window !invalid file content");
 	}
 }
 
@@ -97,7 +89,8 @@ int	check_map_file(char *filename, t_map *map)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		error("Closing Window !OPEN FAILED");
+		error(map, "Closing Window !OPEN FAILED");
+	map->fd = fd;
 	parse_loop(line, fd, map, str);
 	close(fd);
 	if (!map->textures[EA].path || !map->textures[SO].path

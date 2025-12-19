@@ -57,8 +57,8 @@ void	allocation(t_map *map, char *line, int *i, int *flag)
 		(*i)++;
 		(*flag)++;
 	}
-	if (!*line && *flag && *flag < map->size)
-		error("bad map\n");
+	if (!is_map(line) && *flag && *flag < map->size)
+		error(map, "bad map\n");
 }
 
 void	allocate_map(t_map *map, char *filename)
@@ -72,7 +72,8 @@ void	allocate_map(t_map *map, char *filename)
 	flag = 0;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		error("Closing Window !OPEN");
+		error(map, "Closing Window !OPEN");
+	map->fd = fd;
 	map->map = ft_malloc((map->size + 1) * sizeof(char *));
 	line = get_next_line(fd);
 	while (line)
@@ -85,26 +86,12 @@ void	allocate_map(t_map *map, char *filename)
 	map->map[i] = 0;
 }
 
-void	player_angle_set(t_map *map, char c)
-{
-	map->player.player_dir = c;
-	if (c == 'N')
-		map->player.view_angle = 270 * (PI / 180);
-	else if (c == 'S')
-		map->player.view_angle = 90 * (PI / 180);
-	else if (c == 'E')
-		map->player.view_angle = 0 * (PI / 180);
-	else if (c == 'W')
-		map->player.view_angle = 180 * (PI / 180);
-	player_direction(&(map->player));
-}
-
 void	parse_map(t_map *map)
 {
 	if (map_elements(map))
-		error("Closing Window !invalid map elements");
+		error(map, "Closing Window !invalid map elements");
 	if (valid_spaces(map))
-		error("Closing Window !invalid spaces");
+		error(map, "Closing Window !invalid spaces");
 	if (is_surrounded_by_walls(map))
-		error("Closing Window !not surrounded by wall");
+		error(map, "Closing Window !not surrounded by wall");
 }

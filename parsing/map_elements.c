@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 00:02:17 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 21:27:12 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:16:22 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int	map_elements(t_map *map)
 		i++;
 	}
 	if (count != 1)
-		error("Closing Window !player count");
+		error(map, "Closing Window !player count");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:17:39 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 20:07:40 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:40:04 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,17 @@ static int	fill(const char *s, int i, char *r, char c)
 	return (i);
 }
 
-static char	**ft_free(char **r, int in)
+static char	**ft_free(char **r)
 {
 	int	t;
 
 	t = 0;
 	while (r[t])
 	{
-		free(r[t]);
+		ft_free_select(r[t]);
 		t++;
 	}
-	free(r);
+	ft_free_select(r);
 	return (NULL);
 }
 
@@ -89,16 +89,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	r = malloc((count_words(s, c) + 1) * (sizeof(char *)));
+	r = ft_malloc((count_words(s, c) + 1) * (sizeof(char *)));
 	if (!r)
 		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			r[in] = malloc(lent(s, i, c) + 1);
+			r[in] = ft_malloc(lent(s, i, c) + 1);
 			if (!r[in])
-				return (ft_free(r, in));
+				return (ft_free(r));
 			i = fill(s, i, r[in], c);
 			in++;
 		}

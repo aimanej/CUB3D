@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:26:28 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 21:22:29 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:40:55 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	free_2d(char **tmp)
 
 	i = 0;
 	while (tmp[i])
-		free(tmp[i++]);
-	free(tmp);
+		ft_free_select(tmp[i++]);
+	ft_free_select(tmp);
 }
 
 int	textured(t_map *map)

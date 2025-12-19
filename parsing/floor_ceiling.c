@@ -6,7 +6,7 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:49:44 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 23:29:22 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:53:55 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 static int	is_valid_num(char *tmp)
 {
-	int	i;
+	char	*str;
+	int		i;
 
 	i = 0;
+	str = NULL;
 	tmp = skip_spaces(tmp);
-	if (tmp[i] == '+')
+	if (tmp && tmp[i] == '+')
 		i++;
 	while (tmp[i])
 	{
 		if (tmp[i] && !ft_isdigit(tmp[i]))
 		{
-			tmp = skip_spaces(&tmp[i]);
-			if (*tmp != '\0')
+			str = skip_spaces(&tmp[i]);
+			if (*str != '\0')
 				return (0);
 		}
 		i++;

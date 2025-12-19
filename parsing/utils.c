@@ -6,14 +6,16 @@
 /*   By: aijadid <aijadid@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 23:45:56 by ayboudya          #+#    #+#             */
-/*   Updated: 2025/12/18 23:21:41 by aijadid          ###   ########.fr       */
+/*   Updated: 2025/12/19 11:16:34 by aijadid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	error(char *message)
+void	error(t_map *map, char *message)
 {
+	if (map->fd > 2)
+		close(map->fd);
 	printf("error/ %s\n", message);
 	ft_free_all();
 }
